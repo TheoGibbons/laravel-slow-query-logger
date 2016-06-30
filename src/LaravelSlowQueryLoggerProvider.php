@@ -65,7 +65,7 @@ class LaravelSlowQueryLoggerProvider extends ServiceProvider
                     $sql = preg_replace('/\?/', "'{$val}'", $sql, 1);
                 }
 
-                $log->log($level, $time . '  ' . $sql);
+                $log->log($level, 'Slow query: ' . $time . 'ms ' . $sql);
             } catch (\Exception $e) {
                 //  be quiet on error
             }
